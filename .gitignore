@@ -4,6 +4,7 @@ coverage
 coverage.json
 typechain
 gas-report.txt
+deployments
 
 #Hardhat files
 cache
