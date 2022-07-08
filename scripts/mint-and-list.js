@@ -1,4 +1,5 @@
-const { ethers, getNamedAccounts } = require("hardhat")
+const { ethers, getNamedAccounts, network } = require("hardhat")
+const { moveBlocks } = require("../utils/move-blocks")
 
 async function mintAndList() {
     const accounts = await ethers.getSigners()
@@ -22,6 +23,10 @@ async function mintAndList() {
     tx = await nftMarketplace.listItem(basicNft.address, tokenId, PRICE)
     await tx.wait(1)
     console.log("Listed!")
+
+    if (network.config.chainId == "31337") {
+        await moveBlocks(2, 1000)
+    }
 }
 
 mintAndList()
