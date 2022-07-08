@@ -6,7 +6,7 @@ const frontEndContractsFile =
 const frontEndAbiLocation = "../nextjs-nft-marketplace/constants/"
 
 module.exports = async function () {
-    if (process.env.UPDATE_FRONT_END) {
+    if (process.env.UPDATE_FRONT_END.toString() == "true") {
         console.log("Updating front-end")
         await updateContractAddresses()
         await updateAbi()

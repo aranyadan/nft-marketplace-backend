@@ -20,7 +20,7 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
         process.env.ETHERSCAN_API_KEY
     ) {
         log("Verifying...")
-        await verify(raffle.address, args)
+        await verify(basicNft.address, args)
     }
     log("----------------------------------------")
 }
